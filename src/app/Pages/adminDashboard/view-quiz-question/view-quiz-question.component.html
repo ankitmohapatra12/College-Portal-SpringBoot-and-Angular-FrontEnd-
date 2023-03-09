@@ -1,0 +1,55 @@
+<div class="container-fluid">
+    <div class="container-fuild" style="background-color: darkgrey;color: white;;padding: 20px;border-top-left-radius: 20px;border-top-right-radius: 20px;color: white;font-weight: bold;padding-left: 40px;" mat-subheader>
+        <div class="row">
+            <div class="col-md-3">
+                <button mat-list-item [routerLink]="'/admin/add-question/'+qid" class="buttonSubProfile"><b>Add Question</b></button>
+            </div>
+            <div class="col-md-3">
+                <button mat-list-item class="buttonSubProfile" style="margin-left: 10px;"><b>View Quizes</b></button>
+            </div>
+            <div class="col-md-6">
+                
+            </div>
+        </div>
+      
+    </div>
+    <h1 style="margin:15px;">Questions of {{qtitle}}</h1>
+    <div class="bootstrap-wrapper">
+        <div class="row">
+            <div class="col-md-12">
+                <mat-card *ngFor="let q of questions; let i = index" style="background-color:#383839;color:white;margin-top: 15px;">
+                    <mat-card-content>
+                        <p>
+                            <b style="color: white;">Q{{i+1}}<span style="margin-left:20px;" [innerHtml]="q.content"></span></b>
+                        </p>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p>1) {{q.option1}}</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>2) {{q.option2}}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p>3) {{q.option3}}</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>4) {{q.option4}}</p>
+                                </div>
+                            </div>
+                            <mat-divider></mat-divider>
+                            <b><p style="margin-top: 10px;">Correct Answer : <span style="color:lightgreen">{{ q.answer }}</span></p></b>
+                            <div class="row">
+                                <button mat-raised-button color="accent" [routerLink]="'/admin/update-question/'+q.quesId" style="width: 10%;">Edit</button>
+                                <button mat-raised-button color="w100" (click)="deleteQuestion(q.quesId)" style="width:10%;background-color: red;color: white;margin-left: 10px;">Delete</button>
+                            </div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
+

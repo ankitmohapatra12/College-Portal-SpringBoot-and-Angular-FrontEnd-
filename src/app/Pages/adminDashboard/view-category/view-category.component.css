@@ -1,0 +1,22 @@
+li{
+    display: inline-block;
+    list-style: circle;
+    padding:5px;
+}
+
+.title{
+    margin-top: 0px;
+}
+
+.buttonSubProfile{
+    width: 200px;
+    display: inline-block;
+    border-radius: 5px;
+    outline: none;
+    background-color: white;
+    color: blueviolet;
+    border: none;
+}
+b{
+    color: black;
+}

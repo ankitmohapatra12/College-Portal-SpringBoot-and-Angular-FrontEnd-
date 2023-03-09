@@ -1,0 +1,15 @@
+.margin-30{
+    margin-left: 20px;
+    align-items: right;
+}
+
+.example-spacer{
+    flex: 1 1 auto;
+}
+
+
+
+mat-toolbar{
+    color: white;
+}
+

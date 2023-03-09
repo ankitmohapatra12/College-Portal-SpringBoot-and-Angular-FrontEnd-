@@ -1,0 +1,21 @@
+<div class="bootstrap-wrapper">
+    <mat-card>
+         <div class="container-fuild" style="background-color: darkgrey;color: white;;padding: 20px;border-top-left-radius: 20px;border-top-right-radius: 20px;color: white;font-weight: bold;padding-left: 40px;" mat-subheader>
+                    <div>
+                        <button mat-list-item routerLink="/admin/add-category" class="buttonSubProfile"><b>Add Category</b></button>
+                        <button mat-list-item routerLink="/admin/categories" class="buttonSubProfile" style="margin-left: 10px;"><b>View Category</b></button>
+                    </div>
+                </div>
+        <mat-card>
+            <mat-list>
+               
+                <mat-list-item *ngFor="let c of categories" style="padding: 50px;">
+                    <li><div><mat-icon style="font-size: 21px;padding-top: 8px;">folder</mat-icon></div>
+                    <li style="padding-left: 15px;"><div mat-line>{{c.title}}</div></li>
+                    <div mat-line style="padding-left: 50px;padding-top: 10px;">{{c.description}}</div>
+                    <hr>
+                </mat-list-item>
+            </mat-list>
+        </mat-card>
+    </mat-card>
+</div>

@@ -1,0 +1,87 @@
+<div class="bootstrap-wrapper">
+    <mat-card>
+        <div class="container-fuild" style="width:100%;background-color: darkgrey;color: white;;padding: 20px;color: white;font-weight: bold;margin-left: -1px;" mat-subheader>
+            <div class="row">
+                <div class="col-md-3">
+                    <button mat-list-item routerLink="/admin/add-quiz" class="buttonSubProfile"><b>Updata Quiz</b></button>
+                </div>
+                <div class="col-md-3">
+                    <button mat-list-item routerLink="/admin/quizes" class="buttonSubProfile" style="margin-left: 10px;"><b>View Quizes</b></button>
+                </div>
+                <div class="col-md-6"></div>
+            </div>
+        </div>
+        <div class="container" style="margin-top: 30px;">
+            <form (submit)="updateData()" *ngIf="quiz">
+                <div class="row">
+                    <div class="col-md-6 wfull">
+                        <label>Enter title &nbsp;&nbsp;</label>
+                        <mat-form-field>
+                            <input type="text" [(ngModel)]="quiz.title" class="large300" name="title" placeholder="Enter Title" matInput/>
+                        </mat-form-field>
+
+                    </div>
+
+                    <div class="col-md-6 wfull">
+                        <label>Enter Description &nbsp;&nbsp;</label>
+                        <mat-form-field>
+                            <textarea class="large300" [(ngModel)]="quiz.description" name="description" placeholder="Enter about" matInput columns="12"></textarea>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 wfull">
+                        <label>Maximum Marks &nbsp;&nbsp;</label>
+                        <mat-form-field>
+                            <input type="text" class="large300" [(ngModel)]="quiz.maxMarks" name="maxMarks" placeholder="Enter Maximum marks" matInput/>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-6 wfull">
+                        <label>Number of Questions&nbsp;&nbsp;</label>
+                        <mat-form-field>
+                            <input type="text" class="large300" [(ngModel)]="quiz.numberOfQuestions" name="numberOfQuestions" placeholder="Enter Maximum marks" matInput/>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 wfull" style="text-align: right;">
+                        <label>Total Time (Minutes)&nbsp;&nbsp;</label>
+                        <mat-form-field style="width: 150px;">
+                            <input type="number" class="large300" [(ngModel)]="quiz.maxTime" name="maxTime" placeholder="Enter Maximum time"  matInput/>
+                        </mat-form-field>
+                     
+                    </div>
+                    <div class="col-md-2 wfull" style="margin-top: 30px;">
+                        <mat-slide-toggle name="active" [(ngModel)]="quiz.active"
+                            class="example-margin" style="color: blue;">
+                            Publish
+                        </mat-slide-toggle>
+                    </div>
+                    <div class="col-md-4 wfull">
+                        <label>Select Category&nbsp;&nbsp;</label>
+                        <mat-form-field appearance="fill">
+                            <mat-select name="category" [(ngModel)]="quiz.category.cid" class="large300">
+                                <mat-option value="" selected>
+                                    Select Category
+                                  </mat-option>
+                              <mat-option *ngFor="let c of categories" [value]="c.cid">
+                                {{c.title}}
+                              </mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                    </div>
+                </div>
+                <div class="row" style="padding-bottom: 50px;">
+                    <div class="col-md-8">
+
+                    </div>
+                    <div class="col-md-4 wfull" >
+                        <button mat-raised-button color="primary" type="submit">Update</button>
+
+                        <button mat-raised-button color="accent">Reset</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </mat-card>
+</div>

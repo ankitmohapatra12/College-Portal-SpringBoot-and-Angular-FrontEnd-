@@ -1,0 +1,71 @@
+<mat-card class="bigcard" style="width: 99%;">
+    
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="container-fuild">
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <mat-card style="background-color:darkgrey;color: white;">
+                        <h3 style="padding-top: 20px;color:white;text-shadow: 0 1px 10px black;"><b>MY PROFILE</b></h3>
+                        <form class="form" enctype="multipart/form-data" autocomplete="off">
+                            
+                            <!-- <div class="wrapper" *ngIf="!uploaded">
+                                <div class="file-upload">
+                                    
+                                <input  name="image" type="file" (change)="upload($event)" style="" class="file-upload-field" [(ngModel)]="image">
+                                <mat-icon>upload</mat-icon>
+                                
+                                </div>
+                                
+                            </div> -->
+                            <div class="up">
+                                <a>
+                                <div class="fileName" *ngIf="!uploaded">
+                                  PROFILE IMAGE NOT ADDED
+                                </div>
+                                <div class="fileImage">
+                                    <img *ngIf="uploaded" width="200" height="200" style="border-radius: 50%;" [src]="imageUrl" alt="">
+                                  </div>
+                        
+                                <div class="file-search-button">
+                                  <label for="file-upload" class="custom-file-upload">
+                                     <mat-icon class="icon" style="border-radius: 50%;">edit<input  name="image" type="file" (change)="upload($event)" style="" class="file-upload-field" [(ngModel)]="image"></mat-icon>
+                                  </label>
+                                  
+                                </div>
+                            </a>
+                            </div>
+                           
+                        </form>
+                        <!-- <div>
+                           
+                            <div class="file-search-button">
+                                <label for="file-upload" class="custom-file-upload">
+                                  <mat-icon class="icon">search</mat-icon> BROWSE IMAGE
+                                </label>
+                                <input id="file-upload" clss="file2" type="file"/>
+                            </div>
+                        </div> -->
+                        
+                        
+                        <h2 style="text-shadow: 0 1px 10px black;color:white">{{login.getUser().username}}</h2>
+                        <mat-list>
+                            <button mat-list-item routerLink="/user/profile/" class="buttonSubProfile"><b class="boldop" style="color: white;"><mat-icon mat-list-icon class="iconlistmat">info</mat-icon>View Profile Details</b></button>
+                            <button mat-list-item  routerLink="/user/profile/edit" class="buttonSubProfile"><b class="boldop" style="color: white;"><mat-icon mat-list-icon class="iconlistmat">edit</mat-icon>Edit Personal Details</b> </button>
+                            <button mat-list-item  routerLink="/user/profile/account/edit" class="buttonSubProfile"><b class="boldop" style="color: white;"><mat-icon mat-list-icon class="iconlistmat">edit</mat-icon>Edit Account Details</b> </button>
+                            <button mat-list-item  routerLink="/user/profile/academicData/create" class="buttonSubProfile"><b style="margin-left:-140px;color: white;"><mat-icon mat-list-icon class="iconlistmat">add</mat-icon>Add Academics</b> </button>
+                            <button mat-list-item  (click)="logout()" class="buttonSubProfile"><b class="boldop1" style="color: white;"><mat-icon mat-list-icon class="iconlistmat">exit_to_app</mat-icon>Logout</b> </button>
+                        </mat-list>
+                    </mat-card>
+                    
+                </div>
+                <div class="col-md-8 text-center"  style="border-radius: 2px;box-shadow:0 0 5px gray;background-color: #f4f4f4;">
+                    <mat-card-content>
+                        <router-outlet></router-outlet>
+                    </mat-card-content>
+                </div>
+            </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

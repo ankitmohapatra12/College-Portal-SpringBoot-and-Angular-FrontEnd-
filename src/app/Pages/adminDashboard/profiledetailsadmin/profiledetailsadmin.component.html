@@ -1,0 +1,59 @@
+<div class="bootstrap-wrapper">
+    <div class="container-fuild">
+        
+            <div class="row">
+                <mat-card style="background-color:darkslategrey;color:white;;width: 100%;">
+                    <mat-card-content>Profile Details</mat-card-content>
+                  </mat-card>
+            </div>
+            <div class="row">
+                <mat-card style="background-color:#86aba1;color:white;;width: 100%;height:570px;">
+                    <mat-card-content>
+                        <table id="admindetail">
+                            <tr>
+                              <th>FIELDS</th>
+                              <th>DATA</th>
+                            </tr>
+                            <tr>
+                              <td>First Name</td>
+                              <td>{{login.getUser().firstName}}</td>
+                            </tr>
+                            <tr>
+                                <td>Last Name</td>
+                                <td>{{login.getUser().lastName}}</td>
+                               
+                              </tr>
+                              <tr>
+                                <td>Username</td>
+                                <td>{{login.getUser().username}}</td>
+                               
+                              </tr>
+                              <tr>
+                                <td>Email ID</td>
+                                <td>{{login.getUser().email}}</td>
+                              </tr>
+                              <tr>
+                                <td>Phone number</td>
+                                <td>{{login.getUser().phone}}</td>
+                              </tr>
+                              <tr>
+                                <td style="padding: 30px;">Address</td>
+                                <td style="padding: 30px;">{{login.getUser().address}}</td>
+                              </tr>
+                              <tr>
+                                <td>Pincode</td>
+                                <td>{{login.getUser().pincode}}</td>
+                              </tr>
+                              <tr>
+                                <td>Secret Question</td>
+                                <td>{{login.getUser().secretQuestion}}</td>
+                              </tr>
+                          </table>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+
+        
+    </div>
+</div>
+

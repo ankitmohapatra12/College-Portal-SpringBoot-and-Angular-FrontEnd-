@@ -1,0 +1,20 @@
+
+<mat-toolbar style="background-color: black;width: 100%;">
+    <mat-toolbar-row>
+
+      <h1 style="color:white;margin-right: 30px;margin-top: 10px;"><mat-icon style="margin-right: 5px;">book</mat-icon><b>Kakshaa</b></h1>
+      <div>
+        <a mat-button class="margin-30" *ngIf="!examStart">Placements</a>
+        <a mat-button class="margin-30" *ngIf="!examStart">Contact us</a>
+        <a mat-button class="margin-30" *ngIf="!examStart">About us</a>
+      </div>
+      <span class="example-spacer"></span>
+      <div>
+        <a mat-button class="margin-30 example-spacer" [routerLink]="'/signup'" *ngIf="!isLoggedIn"> Register </a>
+        <a mat-button class="margin-30" [routerLink]="'/login'" *ngIf="!isLoggedIn"> Login </a>
+        <a mat-button class="margin-30 example-spacer"  *ngIf="isLoggedIn && user">{{firstName}} {{lastName}}</a>
+        <a mat-button class="margin-30 example-spacer" (click)="logout()" *ngIf="isLoggedIn" style="background-color: #dbbf08;color:black">Logout&nbsp;<mat-icon>logout</mat-icon></a>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  

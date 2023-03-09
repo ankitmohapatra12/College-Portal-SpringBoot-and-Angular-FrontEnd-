@@ -1,0 +1,33 @@
+<mat-card class="bigcard" style="width: 99%;">
+    
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="container-fuild">
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <mat-card style="background-color:darkgray;color: black;">
+                        <h3 style="padding-top: 20px;color:white;text-shadow: 0 1px 10px black;"><b>MY PROFILE</b></h3>
+                        <img src="https://th.bing.com/th/id/R.0d865fef2251d6e2b45605153bb05d07?rik=xZs67OisfmBS2g&riu=http%3a%2f%2fclipart-library.com%2fimg%2f1745489.png&ehk=QgsOP9fiw9iOreJVN5EilNpzzmlqj7VyuBKBzMKCrIA%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1"
+                        alt="" class="profile-image">
+                        
+                        <h2 style="text-shadow: 0 1px 10px black;color:white">{{login.getUser().username}}</h2>
+                        <mat-list>
+                            <button mat-list-item routerLink="/admin/profile/" class="buttonSubProfile"><b class="boldop" style="color: white;"><mat-icon mat-list-icon class="iconlistmat">info</mat-icon>View Profile Details</b></button>
+                            <button mat-list-item  routerLink="/admin/profile/edit" class="buttonSubProfile"><b class="boldop" style="color: white;"><mat-icon mat-list-icon class="iconlistmat">edit</mat-icon>Edit Personal Details</b> </button>
+                            <button mat-list-item  routerLink="/admin/profile/edit" class="buttonSubProfile"><b class="boldop" style="color: white;"><mat-icon mat-list-icon class="iconlistmat">edit</mat-icon>Edit Account Details</b> </button>
+                            <button mat-list-item  routerLink="/admin/profile/edit" class="buttonSubProfile"><b class="boldop1" style="color: white;"><mat-icon mat-list-icon class="iconlistmat">settings</mat-icon>Settings</b> </button>
+                            <button mat-list-item  (click)="logout()" class="buttonSubProfile"><b class="boldop1" style="color: white;"><mat-icon mat-list-icon class="iconlistmat">exit_to_app</mat-icon>Logout</b> </button>
+                        </mat-list>
+                    </mat-card>
+                    
+                </div>
+                <div class="col-md-8 text-center"  style="border-radius: 2px;box-shadow:0 0 5px gray;background-color: #f4f4f4;">
+                    <mat-card-content>
+                        <router-outlet></router-outlet>
+                    </mat-card-content>
+                </div>
+            </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

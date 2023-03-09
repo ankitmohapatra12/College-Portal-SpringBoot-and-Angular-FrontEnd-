@@ -1,0 +1,66 @@
+<app-navbar></app-navbar>
+
+<div class="bootstrap-wrapper">
+    <div class="container px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto" style="margin-top: 40px;height: 700px;">
+        <div class="card card0 border-0">
+            <div class="row d-flex">
+                <div class="col-lg-6">
+                    <div class="card1 pb-5">
+                      
+                        
+                        <div class="row px-3 justify-content-center mt-4 mb-5 border-line" style="margin-top:140px;margin-left: 100px;margin-bottom: 100px;">
+                            <img src="https://i.pinimg.com/originals/e9/07/1d/e9071da47ff14c98ce47bf217001f56e.jpg" width="300" height="400" alt="" class="image" >
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" style="margin-top: 100px;">
+                    <div class="card2 card border-0 px-4 py-5">
+                        <div class="row mb-4 px-3">
+                            <div class="row" style="margin-top: 0px;margin-left: -5px;margin-bottom: 15px;">
+                                <img src="../../../assets/logo.png" alt="Kakshaa" width="70" height="70" style="border-radius: 40%;">
+                                <h6 class="mb-0 mr-4 mt-6" style="margin-top: 20px;margin-left:30px;font-size: 20px;text-align: center;color: #3722a1;"><b>User Login Kakshaa</b></h6>
+                            </div>
+                            
+                        </div>
+                        <div class="row px-3 mb-4" style="margin-bottom: 10px;">
+                            <div class="line"></div>
+                            
+                            <div class="line"></div>
+                        </div>
+                        <form (ngSubmit)="formSubmit()">
+                            <div class="row px-3">
+                                <label class="mb-1"><h6 class="mb-0 text-sm">Username</h6></label>
+                                <input class="mb-4" [(ngModel)]="loginData.username" type="text" name="username" placeholder="Enter Username">
+                            </div>
+                            <div class="row px-3">
+                                <label class="mb-1"><h6 class="mb-0 text-sm">Password</h6></label>
+                                <input required type="password" [(ngModel)]="loginData.password" name="password" placeholder="Enter password">
+                            </div>
+                            <div class="row px-3 mb-4">
+                                <a href="#" class="ml-auto mb-0 text-sm">Forgot Password?</a>
+                            </div>
+                            <br>
+                            <div class="row mb-3 px-3">
+                                <button type="submit" class="btn btn-blue text-center" style="padding: 10px;">Login</button>
+                            </div>
+                        </form>
+                        <div class="row mb-4 px-3" style="padding-top:10px;color:#3722a1">
+                            <small class="font-weight-bold">Don't have an account? <a class="text-danger " [routerLink]="'/signup'">Register</a></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-blue py-4">
+                <div class="row px-3" style="margin-left:20px;margin-top: 70px;">
+                    <small class="ml-4 ml-sm-5 mb-2">A student management portal for schools</small>
+                    <div class="social-contact ml-4 ml-sm-auto">
+                        <span class="fa fa-facebook mr-4 text-sm"></span>
+                        <span class="fa fa-google-plus mr-4 text-sm"></span>
+                        <span class="fa fa-linkedin mr-4 text-sm"></span>
+                        <span class="fa fa-twitter mr-4 mr-sm-5 text-sm"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

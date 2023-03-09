@@ -1,0 +1,16 @@
+.w100{
+    width: 100%;
+}
+
+.w50{
+    width: 50%;
+}
+
+.ckedit{
+    min-height: 400px;
+}
+
+
+.ck.ck-content:not(.ck-comment__input *) {
+    height: 300px;
+}

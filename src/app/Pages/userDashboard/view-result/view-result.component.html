@@ -1,0 +1,85 @@
+<div class="bootstrap-wrapper">
+    <div class="container-fluid" style="margin-top: 30px;">
+        <div class="row">
+            <div class="col-md-3" *ngFor="let r of quizResults">
+                
+                <mat-card style="margin-top: 20px;">
+                    <mat-card-header style="background-color:#ddccff;">
+                        <mat-card-title style="margin: auto;" ><b>Quiz Name :<span class="clrGrey">{{r.quizes.title}}</span></b></mat-card-title>
+                        
+                        <mat-card-subtitle><span style="color:grey;font-weight: bold;">{{r.quizes.category.title}}</span></mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-divider></mat-divider>
+                    <mat-card-content style="background-color: #e0ebeb;">
+                      
+                                <h4 style="margin-top:25px;font-weight: bolder;text-align: center;">Quiz Results</h4>
+                            
+                        <br>
+                        <mat-divider></mat-divider>
+                        <div style="background-color: whitesmoke;width: 100%;padding: 5px;">
+                            <table>
+                                <tr>
+                                    <td><h5><span style="font-weight: bold;">Marks Got</span></h5></td>
+                                    <td style="text-align: right;"><h5><span>{{r.marksGot}} out of {{r.quizes.maxMarks}}</span></h5></td>
+                                </tr>
+                                <tr>
+                                    <td><h5><span style="font-weight: bold;">Questions Attempted</span></h5></td>
+                                    <td style="text-align: right;"><h5><span>{{r.questionsAttempted}} out of {{r.quizes.numberOfQuestions}}</span></h5></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td><h5><span style="font-weight: bold;">Correct Answers</span></h5></td>
+                                    <td style="text-align: right;"><h5><span>{{r.correctAnswer}} </span></h5></td>
+                                </tr>
+                                <tr>
+                                    <td><h5><span style="font-weight: bold;">Start Time</span></h5></td>
+                                    <td style="text-align: right;"><h5><span>{{r.startTime}} </span></h5></td>
+                                </tr>
+                                <tr>
+                                    <td><h5><span style="font-weight: bold;">End Time</span></h5></td>
+                                    <td style="text-align: right;"><h5><span>{{r.endTime}} </span></h5></td>
+                                </tr>
+                                <tr>
+                                    <td><h5><span style="font-weight: bold;">Total Time Taken</span></h5></td>
+                                    <td style="text-align: right;"><h5><span>{{r.totalTime}} min</span></h5></td>
+                                </tr>
+                                <tr>
+                                    <td><h5><span style="font-weight: bold;">Percentile</span></h5></td>
+                                    <td style="text-align: right;"><h5><span>{{r.percentile}} %</span></h5></td>
+                                </tr>
+    
+                            </table>
+                           
+                        </div>
+                        <mat-divider></mat-divider>
+                        <mat-card-actions *ngIf="r.status === 'failed'" style="text-align: center;background-color: red;width: 100%;">
+                            <div class="row">
+                                <div class="col-md-6 offset-md-3" >
+                                    <h4  style="color: white;margin:auto;margin-left: 50px;"><b>Failed</b></h4>
+                                    
+                                </div>
+                            </div>
+                            
+                        </mat-card-actions>
+                        <mat-card-actions *ngIf="r.status === 'passed'" style="text-align: center;background-color: green;">
+                            <div class="row">
+                                <div class="col-md-6 offset-md-3">
+                                    <h4  style="color: white;margin:auto;margin-left: 50px;"><b>Passed</b></h4>
+                                </div>
+                            </div>
+                            
+                        </mat-card-actions>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+        
+    </div>
+</div>
+<!-- <img src="./../../../../assets/results.png" width="100" height="40" alt=""/> -->
+
+<div class="bootstrap-wrapper" *ngIf="quizResults.length == 0">
+    <mat-card>
+        <h1 style="margin:auto;padding:30px">No Data found !!</h1>
+    </mat-card>
+</div>

@@ -1,0 +1,63 @@
+
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row" style="background-color: black;color: white;">
+            <div class="col-md-3"></div>
+            <div class="col-md-6"><h1 style="margin-top: 40PX;">EDIT PERSONAL DATA</h1></div>
+            <div class="col-md-3"></div>
+        </div>
+
+
+        <form >
+        <div class="row" style="margin-top: 40PX;">
+            <div class="col-md-6">
+
+                <mat-form-field appearance="outline" class="wfull">    
+                    <mat-select name="secretQuestion" [(ngModel)]="user.secretQuestion" matNativeControl>
+                        <mat-option value="" selected>Select secret Question</mat-option>
+                        <mat-option value="what is pet name">What is your pet name ?</mat-option>
+                        <mat-option value="what is your birth place">What is your Birth Place</mat-option>
+                        <mat-option value="what is your favorite animal">What is your Favorite Animal</mat-option>
+                        <mat-option value="what is your favorite place">What is your Favorite Place</mat-option>
+                        
+                    </mat-select>
+                  </mat-form-field>
+
+                  <mat-form-field appearance="outline" class="wfull" *ngIf="isVerified">
+                    <mat-label>Username</mat-label>
+                    <input matInput placeholder="Username" name="username" [(ngModel)]="user.username" type="text">
+                </mat-form-field>
+
+        
+
+            </div>
+            <div class="col-md-6">
+                <mat-form-field appearance="outline" class="wfull">
+                    <mat-label>Secret Answer</mat-label>
+                    <input matInput placeholder="Secret Answer" name="secretAnswer" [(ngModel)]="user.secretAnswer" type="password">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="wfull" *ngIf="isVerified">
+                    <mat-label>password</mat-label>
+                    <input matInput placeholder="password" name="password" [(ngModel)]="user.password" type="text">
+                </mat-form-field>
+
+
+            </div>
+        </div>
+        <div class="row" >
+          
+
+            <div class="col-md-12" *ngIf="!isVerified">
+                <button class="wfull"  (click)="verifySecretData()" mat-raised-button  style="background-color: green;color: white;height: 30px;padding: 30px;">Verify data</button>
+            </div>
+            <div class="col-md-12" *ngIf="isVerified">
+                <button class="wfull"  (click)="updateData()" mat-raised-button color="accent" style="height: 30px;padding: 30px;">Update data</button>
+            </div>
+
+            
+            
+        </div>
+    </form>
+    </div>
+</div>

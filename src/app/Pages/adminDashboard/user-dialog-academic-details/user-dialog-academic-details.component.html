@@ -1,0 +1,208 @@
+<div class="bootstrap-wrapper">
+    <div class="container" *ngIf="!academics">
+        <div class="row" style="background-color: black;color: white;">
+            <div class="col-md-3"></div>
+            <div class="col-md-6" style="margin: auto;"><h1 style="margin-top: 40PX;text-align: center;margin-bottom: 40px;">ADD ACADEMIC DATA</h1></div>
+            <div class="col-md-3"></div>
+        </div>
+
+
+        <form >
+       
+        <div class="row" style="margin-top: 5PX;padding: 50px;">
+            <div class="col-md-6">
+
+                <mat-form-field appearance="outline" class="wfull">
+                    <mat-label>Choose Course</mat-label>
+                    <mat-select name="course" [(ngModel)]="academicsadd.course" matNativeControl>
+                      <mat-option value="" selected>--Select course--</mat-option>
+                      <mat-option value="btech">B.Tech</mat-option>
+                      <mat-option value="bca">BCA</mat-option>
+                      <mat-option value="bba">BBA</mat-option>
+                      <mat-option value="mba">MBA</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+              
+                <mat-form-field appearance="outline" class="wfull">
+                    <mat-label>Department</mat-label>
+                    <mat-select name="dept" [(ngModel)]="academicsadd.dept" matNativeControl>
+                      <mat-option value="" selected>--Select Department--</mat-option>
+                      <mat-option value="CSE">CSE</mat-option>
+                      <mat-option value="ETC">ETC</mat-option>
+                      <mat-option value="MECH">MECH</mat-option>
+                      <mat-option value="CIVIL">CIVIL</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+                <mat-form-field appearance="outline" class="wfull">
+                    <mat-label>Section</mat-label>
+                    <input matInput placeholder="Section" name="section" [(ngModel)]="academicsadd.section" type="text">
+                    
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="wfull">
+                    <mat-label>Registration Number</mat-label>
+                    <input matInput placeholder="Registration Number" name="registrationNumber" [(ngModel)]="academicsadd.registrationNumber" type="text">
+                      
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="wfull">
+                    <mat-label>Room Number</mat-label>
+                    <input matInput placeholder="Room Number" name="roomNumber" [(ngModel)]="academicsadd.roomNumber" type="text">
+                    
+                </mat-form-field>
+
+
+            </div>
+            <div class="col-md-6">
+                <mat-form-field appearance="outline" class="wfull">
+                    <mat-label>Start year</mat-label>
+                    <input matInput placeholder="Start Year" name="startBatch" [(ngModel)]="academicsadd.startBatch" type="text">
+                      
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="wfull">
+                    <mat-label>End Year</mat-label>
+                    <input matInput placeholder="End Year" name="endBatch" [(ngModel)]="academicsadd.endBatch" type="text">
+                     
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="wfull">
+                    <mat-label>HOD name</mat-label>
+                    <mat-select matNativeControl name="hodname" [(ngModel)]="academicsadd.hodname">
+                      <mat-option value="" selected>--Select HOD--</mat-option>
+                      <mat-option value="Aditya Mahajan">Aditya Mahajan</mat-option>
+                      <mat-option value="Abhay Mukharjee">Abhay Mukharjee</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+                  <mat-form-field appearance="outline" class="wfull">
+                    <mat-label>Block Number</mat-label>
+                    <mat-select matNativeControl name="blockNumber" [(ngModel)]="academicsadd.blockNumber">
+                      <mat-option value="" selected>--Select Blocknumber--</mat-option>
+                      <mat-option value="1">1</mat-option>
+                      <mat-option value="2">2</mat-option>
+                      <mat-option value="3">3</mat-option>
+                      <mat-option value="4">4</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+                <input type="date" class="wfull" name="admissionDate" [(ngModel)]="academicsadd.admissionDate" style="height: 55px; padding-left: 20px;">
+
+            </div>
+        </div>
+        <div class="row" style="padding: 50px;" >
+            
+            <div class="col-md-6">
+                <button class="wfull" (click)="addAcademics()" mat-raised-button color="accent" style="height: 30px;padding: 30px;">Add data</button>
+            </div>
+            
+        </div>
+    </form>
+    </div>
+
+
+    <div class="container" *ngIf="academics">
+        <div class="row" style="background-color: black;color: white;">
+            <div class="col-md-3"></div>
+            <div class="col-md-6" style="margin: auto;"><h1 style="margin-top: 40PX;text-align: center;margin-bottom: 40px;">ADD ACADEMIC DATA</h1></div>
+            <div class="col-md-3"></div>
+        </div>
+
+
+        <form >
+       
+        <div class="row" style="margin-top: 5PX;padding: 50px;">
+            <div class="col-md-6">
+
+                <mat-form-field appearance="outline" class="wfull">
+                    <mat-label>Choose Course</mat-label>
+                    <mat-select name="course" [(ngModel)]="academics.course" matNativeControl>
+                      <mat-option value="" selected>--Select course--</mat-option>
+                      <mat-option value="btech">B.Tech</mat-option>
+                      <mat-option value="bca">BCA</mat-option>
+                      <mat-option value="bba">BBA</mat-option>
+                      <mat-option value="mba">MBA</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+              
+                <mat-form-field appearance="outline" class="wfull">
+                    <mat-label>Department</mat-label>
+                    <mat-select name="dept" [(ngModel)]="academics.dept" matNativeControl>
+                      <mat-option value="" selected>--Select Department--</mat-option>
+                      <mat-option value="CSE">CSE</mat-option>
+                      <mat-option value="ETC">ETC</mat-option>
+                      <mat-option value="MECH">MECH</mat-option>
+                      <mat-option value="CIVIL">CIVIL</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+                <mat-form-field appearance="outline" class="wfull">
+                    <mat-label>Section</mat-label>
+                    <input matInput placeholder="Section" name="section" [(ngModel)]="academics.section" type="text">
+                    
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="wfull">
+                    <mat-label>Registration Number</mat-label>
+                    <input matInput placeholder="Registration Number" name="registrationNumber" [(ngModel)]="academics.registrationNumber" type="text">
+                      
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="wfull">
+                    <mat-label>Room Number</mat-label>
+                    <input matInput placeholder="Room Number" name="roomNumber" [(ngModel)]="academics.roomNumber" type="text">
+                    
+                </mat-form-field>
+
+
+            </div>
+            <div class="col-md-6">
+                <mat-form-field appearance="outline" class="wfull">
+                    <mat-label>Start year</mat-label>
+                    <input matInput placeholder="Start Year" name="startBatch" [(ngModel)]="academics.startBatch" type="text">
+                      
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="wfull">
+                    <mat-label>End Year</mat-label>
+                    <input matInput placeholder="End Year" name="endBatch" [(ngModel)]="academics.endBatch" type="text">
+                     
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="wfull">
+                    <mat-label>HOD name</mat-label>
+                    <mat-select matNativeControl name="hodname" [(ngModel)]="academics.hodname">
+                      <mat-option value="" selected>--Select HOD--</mat-option>
+                      <mat-option value="Aditya Mahajan">Aditya Mahajan</mat-option>
+                      <mat-option value="Abhay Mukharjee">Abhay Mukharjee</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+                  <mat-form-field appearance="outline" class="wfull">
+                    <mat-label>Block Number</mat-label>
+                    <mat-select matNativeControl name="blockNumber" [(ngModel)]="academics.blockNumber">
+                      <mat-option value="" selected>--Select Blocknumber--</mat-option>
+                      <mat-option value="1">1</mat-option>
+                      <mat-option value="2">2</mat-option>
+                      <mat-option value="3">3</mat-option>
+                      <mat-option value="4">4</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+                <input type="date" class="wfull" name="admissionDate" [(ngModel)]="academics.admissionDate" style="height: 55px; padding-left: 20px;">
+
+            </div>
+        </div>
+        <div class="row" style="padding: 50px;" >
+            
+            <div class="col-md-6">
+                <button class="wfull" (click)="updateAcademics()" mat-raised-button color="accent" style="height: 30px;padding: 30px;">Update data</button>
+            </div>
+            
+        </div>
+    </form>
+    </div>
+</div>

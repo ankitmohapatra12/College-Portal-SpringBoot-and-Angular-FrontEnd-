@@ -1,0 +1,68 @@
+<mat-card style="background-color:darkgrey;color:white ;height: 790px;border-radius:0% ; position: -webkit-sticky;position: sticky;top: 0;margin-left: -20px;">
+    <mat-action-list style="position: -webkit-sticky;position: sticky;top: 0;">
+        <div mat-subheader >
+            <b>MENU</b>
+            
+        </div>
+        <mat-divider></mat-divider>
+        <button mat-list-item routerLink="/admin"><b  style="color: white;"><mat-icon mat-list-icon style="padding-top: 5px;padding-right:5px ;;">home</mat-icon>&nbsp;&nbsp;Home</b></button>
+        <mat-divider></mat-divider>
+        <button mat-list-item  routerLink="/user/profile"><b  style="color: white;">
+            <mat-icon mat-list-icon style="padding-top: 5px;padding-right:5px ;">
+                account_circle
+            </mat-icon>&nbsp;&nbsp;Profile
+        </b>
+        </button>
+        <mat-divider></mat-divider>
+
+        <mat-expansion-panel style="background-color: darkgrey;color: white;">
+            <mat-expansion-panel-header style="height: 25px;padding: 10px;padding-left: 22px;padding-top: 20px;">
+                <span>
+                    <b  style="color: white;">
+                        <mat-icon mat-list-icon style="margin-top: 0px;padding-right:5px ;">
+                            category
+                        </mat-icon>
+                    </b>
+                </span>
+                <span style="font-size:15px;"><b  style="color: white;">&nbsp;&nbsp;Categories</b></span>
+            </mat-expansion-panel-header>
+          
+            <ng-template matExpansionPanelContent style="margin-left: -40px;">
+               
+                    <button *ngFor="let c of categories" mat-list-item  [routerLink]="'/user/quizes/'+c.cid" style="margin-left: -20px;width: 220px;"><b  style="color: white;">
+                        <mat-icon mat-list-icon style="padding-top: 5px;padding-right:5px ;font-size: 20px;">
+                            quiz
+                        </mat-icon>
+                        <span style="font-size: 14px;">&nbsp;&nbsp;{{c.title}}</span>
+                    </b>
+                    </button>
+                    <mat-divider></mat-divider>
+            </ng-template>
+          </mat-expansion-panel>
+        <mat-divider></mat-divider>
+
+        
+
+
+        
+        <button mat-list-item  [routerLink]="'/user/quizes/'+0" style="width: 220px;"><b  style="color: white;">
+            <mat-icon mat-list-icon style="padding-top: 5px;padding-right:5px ;font-size: 20px;">
+                quiz
+            </mat-icon>
+            <span style="font-size: 14px;">&nbsp;&nbsp;All Categories</span>
+        </b>
+        </button>
+        
+        <mat-divider></mat-divider>
+
+
+        <button mat-list-item (click)="logout()"><b  style="color: white;">
+            <mat-icon mat-list-icon style="padding-top: 5px;padding-right:5px ;">
+                logout
+            </mat-icon>&nbsp;&nbsp;Logout
+        </b>
+        </button>
+        <mat-divider></mat-divider>
+    </mat-action-list>
+</mat-card>
+

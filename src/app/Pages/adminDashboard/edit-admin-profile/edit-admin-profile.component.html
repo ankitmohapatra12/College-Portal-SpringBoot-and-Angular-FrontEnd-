@@ -1,0 +1,45 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        
+            <div class="row">
+                <div style="padding: 12px;color:#4469e2;text-shadow: 0 0 10px lightblue;"><h2>EDIT PERSONAL DETAILS</h2></div>
+            </div>
+            <form (ngSubmit)="updateUserData()" name="profileFormUpdation"> 
+            <div class="row">
+            
+                <div class="col-md-6">
+                    <input type="hidden" name="id" [(ngModel)]="user.id">
+                    <div style="text-align: left;margin-bottom: 20px;">
+                        <h4 class="labels">First Name</h4>
+                        <input required type="text" name="firstName" [(ngModel)]="user.firstName" class="text-inputs"  placeholder="Enter first name">
+                    </div>
+                    <div style="text-align: left;margin-bottom: 20px;">
+                        <h4 class="labels">Last Name</h4>
+                        <input required type="text" name="lastName" [(ngModel)]="user.lastName" class="text-inputs"  placeholder="Enter last name">
+                    </div>
+                    
+                </div>
+                <div class="col-md-6" >
+                    <div style="text-align: left;margin-bottom: 20px;">
+                        <h4 class="labels">Email Id</h4>
+                        <input required type="email" name="email" [(ngModel)]="user.email" class="text-inputs"  placeholder="Enter Email Id">
+                    </div>
+                    <div style="text-align: left;margin-bottom: 20px;">
+                        <h4 class="labels">Phone Number</h4>
+                        <input required type="number" name="phone" [(ngModel)]="user.phone" class="text-inputs"  placeholder="Enter Phone Number">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-md-8">
+
+                </div>
+                <div class="col-md-4">
+                        <button type="submit" mat-raised-button color="primary" style="background-color: #4469e2;">Update</button>
+                        <button type="reset" style="margin-left:10px;" mat-raised-button color="accent" value="reset">Clear</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

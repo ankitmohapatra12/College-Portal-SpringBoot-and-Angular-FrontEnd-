@@ -1,0 +1,14 @@
+button{
+    color:white;
+    padding: 25px;
+}
+
+mat-icon{
+    height: 100%;
+    color: #282929;
+}
+
+
+.spnbtn{
+    margin-bottom: 40px;
+}

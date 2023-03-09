@@ -1,0 +1,40 @@
+<div class="bootstrap-wrapper">
+    <div class="container-fluid">
+        <h1 style="margin-top: 20px;">Available Quizes</h1>
+        <div class="row" *ngIf="quizes">
+            <div class="col-md-6" *ngFor="let q of quizes">
+                <mat-card style="margin-bottom: 20px;background-color: darkgrey;color: white;">
+                    <mat-card-header>
+                        <div mat-card-avatar class="example-header-image"></div>
+                        <mat-card-title>
+                            {{q.title}}
+                        </mat-card-title>
+                        <mat-card-subtitle>
+                            {{q.category.title}}
+                        </mat-card-subtitle>
+                    </mat-card-header>
+
+
+                    <mat-card-content>
+                        <p class="truncate">{{q.description}}</p>
+                    </mat-card-content>
+
+                    <div style="padding: 15px;">
+                        <button mat-raised-button [routerLink]="'/user/quizes/results/'+q.qid+'/'+this.userid" style="background-color:cornflowerblue;color: black;">Results</button>
+                        <button mat-raised-button [routerLink]="'/user/quizes/instructions/'+q.qid" style="background-color: green;color: white; margin-left: 10px;">Start</button>
+                        <button mat-button style="margin-left: 10px;">Marks :{{q.maxMarks}}</button>
+                        <button mat-button style="margin-left: 10px;">total Questions:{{q.numberOfQuestions}}</button>
+                    </div>
+                </mat-card>
+            </div>
+            <div class="col-md-12" *ngIf="quizes.length == 0">
+                <mat-card>
+                    <mat-card-subtitle>
+                        <h1>No Quizes present under this category</h1>
+                    </mat-card-subtitle>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
+

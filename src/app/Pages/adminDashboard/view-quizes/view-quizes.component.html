@@ -1,0 +1,44 @@
+<div class="bootstrap-wrapper">
+    <div class="container-fuild" style="width:100%;background-color: darkgrey;color: white;;padding: 20px;color: white;font-weight: bold;margin-left: -1px;" mat-subheader>
+        <div class="row">
+            <div class="col-md-3">
+                
+                <button mat-list-item routerLink="/admin/add-quiz" class="buttonSubProfile"><b>Add Quiz</b></button>
+            
+            </div>
+            <div class="col-md-3">
+                
+                
+                <button mat-list-item routerLink="/admin/quizes" class="buttonSubProfile" style="margin-left: 10px;"><b>View Quizes</b></button>
+            </div>
+            <div class="col-md-6">
+                
+            </div>
+        </div>
+    </div>
+    <mat-card style="margin-top:15px;background-color:#383839;color:white" *ngFor="let q of quizess">
+        
+        <mat-card-header style="color:white">
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>
+                {{q.title}}
+            </mat-card-title>
+            <mat-card-subtitle style="color:white">
+                {{q.category.title}}
+            </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content style="margin-left: 60px;">
+            <p>{{q.description}}</p>
+        </mat-card-content>
+        <div>
+            <button mat-raised-button [routerLink]="'/admin/view-questions/'+q.qid+'/'+q.title" style="background-color:purple;color:white;margin:20px">Questions</button>
+            <button mat-raised-button style="display:inline-block;background-color:white;color:purple;margin:20px;border: 1px solid purple;">Max marks : {{q.maxMarks}}</button>
+            <button mat-raised-button style="background-color:white;color:purple;margin:20px;border: 1px solid purple;">Questions : {{q.numberOfQuestions}}</button>
+            <button mat-raised-button [routerLink]="'/admin/quiz/'+q.qid" style="background-color:green;color:white;border: 1px solid black;"><mat-icon>edit</mat-icon></button>
+            <button mat-raised-button style="background-color:#ffff00;color:black;margin:20px;border: 1px solid black;">Attempts</button>
+            <button mat-raised-button (click)="deleteQuiz(q.qid)" style="background-color:red;color:white;border: 1px solid black;"><mat-icon>delete</mat-icon></button>
+        </div>
+         
+    </mat-card>
+    
+</div>
